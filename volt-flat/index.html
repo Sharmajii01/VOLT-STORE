@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VŌLT — Wear the Current</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="collections.css" />
+  <link rel="stylesheet" href="featured.css" />
+  <link rel="stylesheet" href="marquee.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <span class="nav-tagline">Free delivery above ₹999</span>
+    </div>
+    <div class="nav-logo">
+      <a href="index.html">VŌLT</a>
+    </div>
+    <div class="nav-right">
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-link">Bag <span class="cart-count" id="cartCount">0</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Bag</a>
+      <a href="#collections">Collections</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">SS '25 DROP</div>
+      <h1 class="hero-title reveal-up delay-1">
+        <span>WEAR THE</span>
+        <span class="italic-accent">current.</span>
+      </h1>
+      <p class="hero-sub reveal-up delay-2">
+        Bold cuts. Raw textures. Clothes built for people who move fast.
+      </p>
+      <div class="hero-cta reveal-up delay-3">
+        <a href="shop.html" class="btn-primary">Explore Drop</a>
+        <a href="#collections" class="btn-ghost">See Collections</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-float float-1 reveal-right delay-2">
+      <div class="float-label">New In</div>
+      <div class="float-name">Cargo Wide-Leg</div>
+      <div class="float-price">₹2,499</div>
+    </div>
+    <div class="hero-float float-2 reveal-left delay-3">
+      <div class="float-label">Bestseller</div>
+      <div class="float-name">Oversized Tee</div>
+      <div class="float-price">₹999</div>
+    </div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>NEW ARRIVALS</span><span>✦</span>
+      <span>FREE SHIPPING ABOVE ₹999</span><span>✦</span>
+      <span>SUMMER DROP 25</span><span>✦</span>
+      <span>EASY RETURNS</span><span>✦</span>
+      <span>NEW ARRIVALS</span><span>✦</span>
+      <span>FREE SHIPPING ABOVE ₹999</span><span>✦</span>
+      <span>SUMMER DROP 25</span><span>✦</span>
+      <span>EASY RETURNS</span><span>✦</span>
+    </div>
+  </div>
+
+  <section class="collections" id="collections">
+    <div class="section-header">
+      <p class="section-eyebrow">Explore</p>
+      <h2 class="section-title reveal-up">Shop by <em>Category</em></h2>
+    </div>
+    <div class="collections-grid">
+      <div class="collection-card large reveal-up" data-category="men">
+        <div class="card-bg card-bg-1"></div>
+        <div class="card-content">
+          <span class="card-tag">Men</span>
+          <h3>Men's Edit</h3>
+          <p>Oversized fits, cargos & raw cuts</p>
+          <a href="shop.html?cat=men" class="card-link">Shop Now →</a>
+        </div>
+      </div>
+      <div class="collection-card reveal-up delay-1" data-category="women">
+        <div class="card-bg card-bg-2"></div>
+        <div class="card-content">
+          <span class="card-tag">Women</span>
+          <h3>Women's Edit</h3>
+          <p>Co-ords, drapes & street looks</p>
+          <a href="shop.html?cat=women" class="card-link">Shop Now →</a>
+        </div>
+      </div>
+      <div class="collection-card reveal-up delay-2" data-category="essentials">
+        <div class="card-bg card-bg-3"></div>
+        <div class="card-content">
+          <span class="card-tag">Core</span>
+          <h3>Essentials</h3>
+          <p>Basics done different</p>
+          <a href="shop.html?cat=essentials" class="card-link">Shop Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured" id="featured">
+    <div class="section-header">
+      <p class="section-eyebrow">Trending Now</p>
+      <h2 class="section-title reveal-up">Top <em>Picks</em></h2>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+    <div class="view-all-wrap">
+      <a href="shop.html" class="btn-primary">View All Products</a>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="statement-inner reveal-up">
+      <h2>"Clothes that <em>charge</em> the room<br>before you speak."</h2>
+      <p>VŌLT is built for the streets of Mumbai, Bangalore, Delhi — and anywhere else that moves fast.</p>
+      <a href="shop.html" class="btn-ghost">Shop The Collection</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">VŌLT</div>
+        <p>Wear the current.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="shop.html?cat=men">Men</a>
+          <a href="shop.html?cat=women">Women</a>
+          <a href="shop.html?cat=essentials">Essentials</a>
+          <a href="shop.html">New Arrivals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns</a>
+          <a href="#">Size Guide</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VŌLT. All rights reserved.</p>
+      <p>Made with ❤️ in India</p>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

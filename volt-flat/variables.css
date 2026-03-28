@@ -1,0 +1,46 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* Colors */
+  --black:       #0a0a0a;
+  --off-black:   #111111;
+  --charcoal:    #1c1c1c;
+  --mid-gray:    #3a3a3a;
+  --gray:        #888888;
+  --light-gray:  #c8c8c8;
+  --off-white:   #f5f2ee;
+  --white:       #ffffff;
+
+  /* Accent */
+  --volt:        #d4ff00;   /* Electric lime — the brand accent */
+  --volt-dark:   #a8cc00;
+  --rust:        #c84b1a;   /* Secondary accent for sale tags etc. */
+
+  /* Typography */
+  --font-display:  'Bebas Neue', sans-serif;
+  --font-body:     'DM Sans', sans-serif;
+  --font-italic:   'Playfair Display', serif;
+
+  /* Spacing scale */
+  --sp-xs:  0.5rem;
+  --sp-sm:  1rem;
+  --sp-md:  2rem;
+  --sp-lg:  4rem;
+  --sp-xl:  8rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 100px;
+
+  /* Transitions */
+  --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:  cubic-bezier(0.4, 0.0, 1, 1);
+  --t-fast:   150ms;
+  --t-mid:    350ms;
+  --t-slow:   600ms;
+
+  /* Navbar height */
+  --nav-h: 64px;
+}

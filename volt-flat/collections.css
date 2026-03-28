@@ -1,0 +1,151 @@
+/* ===== COLLECTIONS ===== */
+.collections {
+  padding: var(--sp-xl) var(--sp-md);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.collection-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 420px;
+  cursor: pointer;
+}
+.collection-card.large { min-height: 520px; }
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform var(--t-slow) var(--ease);
+}
+.collection-card:hover .card-bg { transform: scale(1.06); }
+
+/* Gradient placeholders (replace with real images via background-image) */
+.card-bg-1 {
+  background:
+    linear-gradient(160deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+}
+.card-bg-1::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 60% 40%, rgba(212,255,0,0.12) 0%, transparent 60%);
+}
+.card-bg-2 {
+  background:
+    linear-gradient(160deg, #1e1e1e 0%, #333 60%, #1c1c1c 100%);
+}
+.card-bg-2::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 40% 60%, rgba(200,75,26,0.12) 0%, transparent 60%);
+}
+.card-bg-3 {
+  background:
+    linear-gradient(160deg, #181818 0%, #282828 60%, #181818 100%);
+}
+
+/* Decorative pattern on each card */
+.card-bg-1::before, .card-bg-2::before, .card-bg-3::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 30px
+    );
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  z-index: 2;
+  transform: translateY(0);
+  transition: padding var(--t-mid) var(--ease);
+}
+.collection-card:hover .card-content { padding-bottom: 2.4rem; }
+
+.card-tag {
+  display: inline-block;
+  background: var(--volt);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.6rem;
+}
+
+.card-content h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.card-content p {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--volt);
+  gap: 0.3rem;
+  transition: gap var(--t-fast) var(--ease);
+}
+.collection-card:hover .card-link { gap: 0.6rem; }
+
+/* Mannequin placeholder text in center of card */
+.collection-card::before {
+  content: attr(data-category);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity var(--t-mid);
+}
+
+@media (max-width: 900px) {
+  .collections-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .collection-card.large {
+    grid-column: 1 / -1;
+    min-height: 320px;
+  }
+}
+@media (max-width: 600px) {
+  .collections-grid { grid-template-columns: 1fr; }
+  .collection-card { min-height: 260px; }
+  .collection-card.large { min-height: 300px; }
+}

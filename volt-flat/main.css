@@ -1,0 +1,178 @@
+/* ===== BASE / GLOBAL ===== */
+body {
+  background: var(--black);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Cursor dot */
+body::after {
+  content: '';
+  width: 12px; height: 12px;
+  background: var(--volt);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform var(--t-fast) var(--ease), opacity var(--t-fast);
+  transform: translate(-50%, -50%);
+  left: var(--cx, -100px);
+  top: var(--cy, -100px);
+}
+
+/* Section shared */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--sp-lg);
+}
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--volt);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--off-white);
+  letter-spacing: 0.02em;
+}
+.section-title em {
+  font-family: var(--font-italic);
+  font-style: italic;
+  color: var(--volt);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background: var(--volt);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-pill);
+  transition: background var(--t-mid) var(--ease),
+              transform var(--t-fast) var(--ease),
+              box-shadow var(--t-mid) var(--ease);
+}
+.btn-primary:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212,255,0,0.25);
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 1.5px solid var(--off-white);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-pill);
+  transition: border-color var(--t-mid) var(--ease),
+              color var(--t-mid) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.btn-ghost:hover {
+  border-color: var(--volt);
+  color: var(--volt);
+  transform: translateY(-2px);
+}
+
+/* Containers */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+/* Statement section */
+.statement {
+  padding: var(--sp-xl) var(--sp-md);
+  text-align: center;
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+.statement::before {
+  content: 'VŌLT';
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 30vw, 22rem);
+  color: rgba(255,255,255,0.03);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.statement-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.statement-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  margin-bottom: var(--sp-md);
+  letter-spacing: 0.02em;
+}
+.statement-inner h2 em {
+  font-family: var(--font-italic);
+  font-style: italic;
+  color: var(--volt);
+}
+.statement-inner p {
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  margin-bottom: var(--sp-md);
+}
+
+.view-all-wrap {
+  text-align: center;
+  margin-top: var(--sp-lg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--mid-gray); border-radius: 3px; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--volt);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: var(--radius-pill);
+  z-index: 9998;
+  transition: transform var(--t-mid) var(--ease);
+  white-space: nowrap;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  :root { --sp-lg: 3rem; --sp-xl: 5rem; }
+}

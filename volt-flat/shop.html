@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — VŌLT</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="variables.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="featured.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="shop.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-left"><span class="nav-tagline">Free delivery above ₹999</span></div>
+    <div class="nav-logo"><a href="index.html">VŌLT</a></div>
+    <div class="nav-right">
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-link">Bag <span class="cart-count" id="cartCount">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Bag</a>
+    </div>
+  </nav>
+
+  <div class="shop-header">
+    <div class="shop-header-inner">
+      <h1 class="reveal-up">The <em>Full</em> Collection</h1>
+      <p class="reveal-up delay-1">Every piece, every drop.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-cat="all">All</button>
+      <button class="filter-tab" data-cat="men">Men</button>
+      <button class="filter-tab" data-cat="women">Women</button>
+      <button class="filter-tab" data-cat="essentials">Essentials</button>
+    </div>
+    <div class="filter-sort">
+      <select id="sortSelect">
+        <option value="default">Sort: Default</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="shop-grid-wrap">
+    <div class="products-grid" id="shopGrid"></div>
+    <div class="no-results" id="noResults" style="display:none"><p>No products found.</p></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="footer-logo">VŌLT</div><p>Wear the current.</p></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Shop</h4><a href="shop.html?cat=men">Men</a><a href="shop.html?cat=women">Women</a><a href="shop.html?cat=essentials">Essentials</a></div>
+        <div class="footer-col"><h4>Help</h4><a href="#">Shipping Policy</a><a href="#">Returns</a><a href="#">Contact Us</a></div>
+        <div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">WhatsApp</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 VŌLT. All rights reserved.</p><p>Made with ❤️ in India</p></div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="main.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

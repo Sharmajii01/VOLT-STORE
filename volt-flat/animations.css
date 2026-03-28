@@ -1,0 +1,99 @@
+/* ===== ANIMATIONS ===== */
+
+/* Scroll reveal base states */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+.revealed {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+}
+
+/* Delay helpers */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.35s !important; }
+.delay-4 { transition-delay: 0.5s !important; }
+
+/* Page transition overlay */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--volt);
+  z-index: 9999;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  pointer-events: none;
+}
+.page-transition.entering {
+  animation: page-enter 0.5s var(--ease-in) forwards;
+}
+.page-transition.leaving {
+  animation: page-leave 0.5s var(--ease-out) forwards;
+}
+@keyframes page-enter {
+  0%   { transform: scaleY(0); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+@keyframes page-leave {
+  0%   { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: top; }
+}
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--charcoal) 25%, var(--mid-gray) 50%, var(--charcoal) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Size pill hover */
+.size-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid var(--mid-gray);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--t-fast), background var(--t-fast), color var(--t-fast);
+}
+.size-pill:hover, .size-pill.selected {
+  border-color: var(--volt);
+  background: var(--volt);
+  color: var(--black);
+}
+
+/* Pulse dot (live indicator) */
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--volt);
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(212,255,0,0.5);
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0%  { box-shadow: 0 0 0 0 rgba(212,255,0,0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(212,255,0,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(212,255,0,0); }
+}

@@ -1,0 +1,32 @@
+/* ===== MARQUEE ===== */
+.marquee-strip {
+  background: var(--volt);
+  color: var(--black);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-strip:hover .marquee-track {
+  animation-play-state: paused;
+}
